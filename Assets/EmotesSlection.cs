@@ -36,11 +36,11 @@ public class EmotesSlection : NetworkBehaviour
         animator = GetComponent<Animator>();
         Gold = GameObject.Find("Gold");
         int goldtext= PlayerPrefs.GetInt("Currency");
-        Gold.GetComponent<TextMeshProUGUI>().text = goldtext.ToString();
+      //  Gold.GetComponent<TextMeshProUGUI>().text = goldtext.ToString();
 
     }
     void Update()
-    {
+    {//nhelou tab wnsakrou
         if (!IsLocalPlayer) return;
             if (BlurScreen != null && EmoteWheel != null && animator != null)
             {
@@ -73,7 +73,7 @@ public class EmotesSlection : NetworkBehaviour
             {
                 Debug.Log("Not Expected Scene");
             }
-
+//colision shop
 
         if (!IsLocalPlayer) return;
         Collider[] colliders = Physics.OverlapSphere(transform.position, shopDetectionRadius);
@@ -100,7 +100,7 @@ public class EmotesSlection : NetworkBehaviour
     }
 
     
-
+//yehl wysaker el animations
     public void poulateButtonArray()
     {
         if (!IsLocalPlayer) return;
@@ -127,6 +127,8 @@ public class EmotesSlection : NetworkBehaviour
         }
     }
 
+
+    //set triger
     void SetEmote1Animation(string triggername)
     {
         Animator animator = GetComponent<Animator>();
@@ -135,6 +137,8 @@ public class EmotesSlection : NetworkBehaviour
         StartCoroutine(canAnimateAgain(triggername));
     }
 
+
+    //animation cancel
     IEnumerator canAnimateAgain(string animationName)
     {
         while (true)
